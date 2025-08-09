@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zahid Hussain Ansari — Resume</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- html2pdf (for PDF download) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+  <!-- Theme toggle -->
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+    <i id="themeIcon" class="fas fa-moon"></i>
+  </button>
+
+  <div id="page" class="page">
+
+    <!-- HEADER / PERSONAL -->
+    <header class="hero">
+      <div class="hero-left">
+        <img src="assets/profile.jpg" alt="Profile photo" class="profile-photo">
+      </div>
+      <div class="hero-right">
+        <h1 class="name">ZAHID HUSSAIN ANSARI</h1>
+        <p class="role">Aspiring Full Stack Web Developer</p>
+
+        <ul class="contact-list">
+          <li><i class="fas fa-calendar"></i> DOB: 03 June 2002</li>
+          <li><i class="fas fa-phone"></i> <a href="tel:+91-XXXXXXXXXX">+91-8318134460</a></li>
+          <li><i class="fas fa-envelope"></i> <a href="mailto:your-email@example.com">zahid786officialz@gmail.com</a></li>
+          <li><i class="fas fa-map-marker-alt"></i> Deoria, U.P.</li>
+        </ul>
+
+        <div class="links">
+          <a href="https://github.com/ZahidNinza" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <a href="https://www.linkedin.com/in/zahid-hussain-ansari-436a37266?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/ZahidNinza/zahid-resume-portfolio" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
+        </div>
+
+        <div class="hero-actions">
+          <button id="downloadPdfBtn" class="btn outline"><i class="fas fa-file-download"></i> Download Resume (PDF)</button>
+          <a class="btn primary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <main class="main-grid">
+
+      <!-- SUMMARY & OBJECTIVE -->
+      <section class="card summary" data-animate>
+        <h2>Professional Summary</h2>
+        <p>
+          Motivated and detail-oriented aspiring Full Stack Web Developer with a strong foundation in HTML, CSS and JavaScript,
+          and programming experience in C, C++, C#, and Python. Comfortable building responsive front-ends (React) and simple
+          back-ends (Node.js / Express). Quick learner, team-player and problem-solver seeking an entry-level developer role.
+        </p>
+
+        <h3>Career Objective</h3>
+        <p>
+          To secure a position as a Frontend / Full Stack Developer where I can apply my web development skills, continue learning
+          modern frameworks, and contribute to real-world projects that improve user experience.
+        </p>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="card skills" data-animate>
+        <h2>Skills</h2>
+
+        <div class="skill-columns">
+          <div>
+            <h4>Frontend</h4>
+            <ul>
+              <li>HTML5, Semantic HTML</li>
+              <li>CSS3 — Flexbox, Grid, Responsive Design</li>
+              <li>JavaScript (ES6+)</li>
+              <li>React.js (components, hooks)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Backend & Databases</h4>
+            <ul>
+              <li>Node.js, Express.js</li>
+              <li>REST API design</li>
+              <li>MongoDB / MySQL (basic)</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Programming Languages</h4>
+            <ul>
+              <li>C</li>
+              <li>C++</li>
+              <li>C#</li>
+              <li>Python</li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Tools & Others</h4>
+            <ul>
+              <li>Git & GitHub</li>
+              <li>VS Code, Chrome DevTools</li>
+              <li>Basic Linux commands</li>
+              <li>Problem solving & debugging</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="card education" data-animate>
+        <h2>Education</h2>
+
+        <div class="edu">
+          <h3>B.Tech — Mechanical Engineering</h3>
+          <p class="muted">Lucknow Institute of Technology · 2025</p>
+          <p>CGPA: <strong>7.62</strong></p>
+        </div>
+
+        <div class="edu">
+          <h3>Diploma — Mechanical Engineering</h3>
+          <p class="muted">Government Polytechnic, Balrampur · 2020</p>
+          <p>Percentage: <strong>68.9%</strong></p>
+        </div>
+
+        <div class="edu">
+          <h3>Intermediate (Class 12)</h3>
+          <p class="muted">OKM Inter College, Lar · 2017</p>
+          <p>Percentage: <strong>76.6%</strong></p>
+        </div>
+
+        <div class="edu">
+          <h3>High School (Class 10)</h3>
+          <p class="muted">Seraj Intermediate College, Mehrauna Ghat · 2015</p>
+          <p>Percentage: <strong>86.5%</strong></p>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="card projects" data-animate>
+        <h2>Projects</h2>
+
+        <div class="project">
+          <h3>Personal Portfolio Website</h3>
+          <p class="muted">HTML, CSS, JavaScript — Hosted on GitHub Pages</p>
+          <ul>
+            <li>Responsive single-page portfolio built to showcase projects and contact information.</li>
+            <li>Features: dark/light theme, contact form (mailto fallback) and PDF export.</li>
+            <li><a href="https://<YOUR_PORTFOLIO>/project-portfolio" target="_blank">Live Demo</a> • <a href="https://github.com/<YOUR_GITHUB>/portfolio" target="_blank">Code</a></li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>E-commerce Demo (React + Node)</h3>
+          <p class="muted">React, Node.js, Express</p>
+          <ul>
+            <li>Frontend with product listing, cart (localStorage) and basic checkout UI.</li>
+            <li>Backend (demo) providing product JSON data via REST endpoints.</li>
+            <li><a href="https://<YOUR_PORTFOLIO>/ecommerce-demo" target="_blank">Live Demo</a> • <a href="https://github.com/<YOUR_GITHUB>/ecommerce-demo" target="_blank">Code</a></li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>To-Do App (Vanilla JS)</h3>
+          <p class="muted">JavaScript, LocalStorage</p>
+          <ul>
+            <li>CRUD operations, filters and responsive UI.</li>
+            <li><a href="https://<YOUR_PORTFOLIO>/todo" target="_blank">Live Demo</a> • <a href="https://github.com/<YOUR_GITHUB>/todo-app" target="_blank">Code</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ACHIEVEMENTS & CERTIFICATES -->
+      <section class="card achievements" data-animate>
+        <h2>Achievements & Certificates</h2>
+        <ul>
+          <li>Completed online courses in Web Development (HTML, CSS, JavaScript) — add provider/name in GitHub README.</li>
+          <li>Participated in college-level coding competitions and technical fests (details available on request).</li>
+        </ul>
+        <p class="muted">Add actual certificate links in the portfolio section or GitHub repository for verifiable proof.</p>
+      </section>
+
+      <!-- LANGUAGES & EXTRA -->
+      <section class="card extras" data-animate>
+        <h2>Languages & Extra</h2>
+        <div class="two-col">
+          <div>
+            <h4>Languages</h4>
+            <ul>
+              <li>Hindi — Native</li>
+              <li>English — Professional working proficiency</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="card contact" data-animate>
+        <h2>Contact</h2>
+        <p class="muted">Preferably email — or use this quick form (will open your email client).</p>
+
+        <form id="contactForm" class="contact-form">
+          <div class="form-row">
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="email" id="email" name="email" placeholder="Your email" required>
+          </div>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <textarea id="message" name="message" rows="6" placeholder="Your message" required></textarea>
+
+          <div class="form-actions">
+            <button type="submit" class="btn primary">Send Message</button>
+            <button type="button" id="resetBtn" class="btn outline">Reset</button>
+          </div>
+          <p id="formStatus" class="form-status" aria-live="polite"></p>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>© <span id="year"></span> Zahid Hussain Ansari · Lucknow Institute of Technology</p>
+    </footer>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+</body>
+</html>

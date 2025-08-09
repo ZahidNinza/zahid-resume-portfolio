@@ -1,0 +1,164 @@
+:root{
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #0f1724;
+  --muted: #58616a;
+  --primary: #0b76ff;
+  --accent: #06b6d4;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+/* Dark theme */
+body.dark {
+  --bg: #0b0d11;
+  --card: #0f1720;
+  --text: #e6eef8;
+  --muted: #9aa9b6;
+  --primary: #60a5fa;
+  --shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  transition: background .35s ease, color .35s ease;
+}
+
+/* Theme toggle button */
+.theme-toggle{
+  position: fixed;
+  right: 16px;
+  top: 16px;
+  z-index: 999;
+  background: var(--card);
+  border: none;
+  padding: 10px 12px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  color: var(--primary);
+}
+
+/* Page container */
+.page{
+  max-width:1100px;
+  margin:28px auto;
+  padding:18px;
+}
+
+/* Hero header */
+.hero{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  padding:18px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+body.dark .hero{ background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));}
+
+.hero-left{flex:0 0 150px}
+.profile-photo{
+  width:150px;
+  height:150px;
+  border-radius:12px;
+  object-fit:cover;
+  border:4px solid var(--card);
+  box-shadow: 0 8px 25px rgba(2,6,23,0.06);
+}
+
+.hero-right{flex:1}
+.name{font-size:26px;margin:0;font-weight:700}
+.role{color:var(--muted);margin:6px 0 10px}
+
+/* Contact list */
+.contact-list{list-style:none;padding:0;margin:0 0 12px 0;color:var(--muted)}
+.contact-list li{margin:6px 0;font-size:14px}
+.links a{margin-right:12px;color:var(--primary);text-decoration:none;font-weight:600}
+
+/* Actions */
+.hero-actions{margin-top:12px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:8px;border:1px solid transparent;cursor:pointer;font-weight:600;text-decoration:none;
+}
+.btn.primary{background:var(--primary);color:#fff}
+.btn.outline{background:transparent;border-color:rgba(15,23,42,0.06);color:var(--text)}
+
+/* Main grid */
+.main-grid{
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap:18px;
+  margin-top:18px;
+}
+
+/* Cards */
+.card{
+  background:var(--card);
+  padding:18px;
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  opacity:0; transform: translateY(16px) scale(.995); transition: all .45s ease;
+}
+.card h2{margin-top:0;color:var(--primary);font-size:18px}
+.card p, .card ul { color: var(--muted); line-height:1.6 }
+
+/* Card spans */
+.summary{grid-column: span 8}
+.skills{grid-column: span 4}
+.education{grid-column: span 8}
+.projects{grid-column: span 4}
+.achievements{grid-column: span 8}
+.extras{grid-column: span 4}
+.contact{grid-column: span 12}
+
+/* Skill columns */
+.skill-columns{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.skill-columns h4{margin:0 0 6px 0}
+.skill-columns ul{margin:6px 0 0 18px}
+
+/* Education & projects */
+.edu{margin-bottom:14px}
+.project{margin-bottom:14px}
+.muted{color:var(--muted)}
+
+/* Extras */
+.two-col{display:flex;gap:20px}
+.two-col ul{margin:6px 0 0 18px}
+
+/* Contact form */
+.contact-form{display:flex;flex-direction:column;gap:10px}
+.form-row{display:flex;gap:10px}
+.form-row input{flex:1}
+input[type="text"], input[type="email"], textarea{
+  width:100%;padding:10px 12px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);background:transparent;color:var(--text)
+}
+.form-actions{display:flex;gap:10px;align-items:center}
+.form-status{color:var(--muted);font-size:14px}
+
+/* Footer */
+.footer{text-align:center;margin-top:18px;color:var(--muted);font-size:14px}
+
+/* Visible animation state */
+[data-animate].visible{ opacity:1; transform:none }
+
+/* Responsive */
+@media (max-width:1000px){
+  .summary{grid-column: span 12}
+  .skills{grid-column: span 12}
+  .education{grid-column: span 12}
+  .projects{grid-column: span 12}
+  .achievements{grid-column: span 12}
+  .extras{grid-column: span 12}
+  .hero{flex-direction:column;align-items:center;text-align:center}
+  .two-col{flex-direction:column}
+  .profile-photo{width:120px;height:120px}
+  .form-row{flex-direction:column}
+}
